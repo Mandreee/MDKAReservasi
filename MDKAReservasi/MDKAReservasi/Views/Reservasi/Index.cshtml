@@ -1,0 +1,146 @@
+﻿@model IEnumerable<MDKAReservasi.Models.tblT_Reservasi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                @Html.ActionLink("Create New", "Create")
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- /.card -->
+
+                    <div class="card">
+                        <div class="card-header">
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Ruangan_FK)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SubjectReservasi)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.TanggalReservasi)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.JamMulai)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.JamSelesai)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CreatedBy)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CreatedDate)
+                                        </th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Ruangan_FK)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.SubjectReservasi)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TanggalReservasi)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.JamMulai)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.JamSelesai)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Reservasi_PK }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.Reservasi_PK }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.Reservasi_PK })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Ruangan_FK)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SubjectReservasi)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.TanggalReservasi)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.JamMulai)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.JamSelesai)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CreatedBy)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CreatedDate)
+                                        </th>
+                                        <th>Option</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+</div>
+
+@if (TempData["message"] != null)
+{
+    <script>alert('@TempData["message"]');</script>
+}
